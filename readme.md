@@ -1,16 +1,16 @@
 # Introduction
-In this project, we explore how three linear classifiers behave for input points that are _far away_ from the typical data. We will compare Logistic regression and Gaussian process classifier. We seek to compare what a trained model predicts on input points that are _far away_ from the data points of the train set
+In this project, we explore how three linear classifiers behave for input points that are _far away_ from the typical data. We will compare Logistic regression and Gaussian process classifier. We compare what a trained model predicts on input points that are _far away_ from the data points of the train set
 
 # Simplicity	
-We often herald Logistic regression for its simplicity. Logistic regression is easily explainable, allows for easy inference, and almost every out-of-the-box machine learning library in any language implements the algorithm. However, I see one drawback: points _far away_ from the typical training data get an extremely high or low output. This might be a problem in production environments. As the input data distribution shifts, the user might be tricked into interpreting the high outputs as highly confident classifications. 
+We often herald Logistic regression for its simplicity. Logistic regression is easily explainable, allows for easy inference, and almost every out-of-the-box machine learning library in any language implements the algorithm. However, I see one drawback. Points _far away_ from the typical training data get a high or low output. This might be a problem in production environments. As the input data distribution shifts, the user might be tricked into interpreting the high outputs as confident classifications. 
 
 # Example
 In the following example, we make two point clouds. One cloud of positive examples and one cloud of negative examples. We fit both a logistic regression model (LR) and a gaussian process classifier (GP). As the clouds are fairly distinct, both models achieve higher than 95% accuracy. 
 
-The background of the scatter plots gets a color according to probability output of the model. Both LR and GP output a number between 0 and 1, which can be interpreted as a probability. 
+The background of the scatter plots colors according to probability output of the model. Both LR and GP output a number between 0 and 1, which we interpret as a probability. 
 
 Here are both plots
-![plot](www.google.com)
+![plot](https://github.com/RobRomijnders/far_away/blob/master/far_away/im/heatmap_logreg_gp.png?raw=true)
 
 For logistic regression: the further we go right, the higher the probability becomes. This means that an input at `x=(4, 1)` will output a very high probability. (and vice versa to the far left)
 
